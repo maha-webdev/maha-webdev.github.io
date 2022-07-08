@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/contact-style.css" />
+    <title>Maha Webdev | Contact</title>
+  </head>
+  <body>
+    <section id="contact-main-section">
+      <nav class="main-nav container">
+        <a href="./index.html">
+          <div class="nav-logo">
+            <img src="./assets/images/Logo.png" alt="" />
+            <h1 class="logo-text">Maha Webdev</h1>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <a href="./about.html">
+            <li class="link">About</li>
+          </a>
+          <a href="./projects.html">
+            <li class="link">Projects</li>
+          </a>
+          <a href="./contact.html">
+            <li class="link contact-link">Contact</li>
+          </a>
+        </ul>
+
+        <div class="burger">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </div>
+      </nav>
+
+      <div class="contact-form-card-container">
+        <div class="contact-form-card">
+          <h2 class="contact-title">Contact Us</h2>
+          <form action="" name="contact-form" class="contact-form">
+            <div class="input">
+              <input
+                name="nama"
+                class="contact-input"
+                type="text"
+                placeholder=" "
+              />
+              <label class="contact-label">Nama</label>
+            </div>
+            <div class="input">
+              <input
+                name="email"
+                class="contact-input"
+                type="email"
+                placeholder=" "
+              />
+              <label class="contact-label">Email</label>
+            </div>
+            <div class="textarea">
+              <textarea
+                name="pesan"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder=" "
+                class="contact-textarea"
+              ></textarea>
+              <label class="textarea-label">Pesan</label>
+            </div>
+            <input type="submit" value="Kirim" class="kirim-btn" />
+          </form>
+          <div class="contact-socials">
+            <p class="social-title">Bisa juga hubungi kami melalui:</p>
+            <a
+              href="https://wa.me/6289524943524"
+              target="_blank"
+              class="form-link"
+            >
+              <i class="fa-brands fa-whatsapp"></i>+6281353440647
+            </a>
+            <a
+              href="https://instagram.com/maha_webdev"
+              target="_blank"
+              class="form-link"
+            >
+              <i class="fa-brands fa-instagram"></i>@maha_webdev
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+          <a href="./about.html">
+            <li class="link">About</li>
+          </a>
+          <a href="./projects.html">
+            <li class="link">Projects</li>
+          </a>
+          <a href="./contact.html">
+            <li class="link contact-link">Contact</li>
+          </a>
+        </ul>
+      </div>
+    </section>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyD7EdWksc3W_L4flm19qkPnXdiuG9N2nsViKiE8atXmz43yPNzpUA14MwvTOekHCFYRQ/exec";
+      const form = document.forms["contact-form"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <script src="./assets/js/contact-app.js"></script>
+  </body>
+</html>
